@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 
 function TextForm() {
-  // const word = "kite";
- // const [link, setLink] = useState(false);
   const [word, setWord] = useState("");
   const [status, setStatus] = useState({
     content: "",
     picture: ""
   });
   const [post, setPost] = useState([]);
-
-  // const [pic, setPic] = useState(false);
-
   const [art, setArt] = useState([]);
 
   const [searchBar, setSearchBar] = useState(false);
@@ -56,18 +51,10 @@ function TextForm() {
       content: "",
       picture: ""
     });
-    // setLink(false);
     setShow(false);
     setSearchBar(false);
-    // setPic(true);
+   
   }
-  //function deletePost(id, pid) {
-  //   setPost((prevPost) => {
-  //     return prevPost.filter((post, index) => {
-  //       return index !== id;
-  //     });
-  //   });
-  // }
 
   function handleDelete(id) {
     console.log(id);
@@ -79,21 +66,12 @@ function TextForm() {
   }
   function selectGif(url) {
     const value = url;
-    // setStatus((prevItem) => {...prevItem.content, picture: id });
     setStatus((prevItem) => {
       return {
         content: prevItem.content,
         picture: value
       };
     });
-    // setLink(true);
-
-    // const url = url;
-    // const id = id;
-
-    // setStatus.picture(url);
-    //  console.log(id);
-    // console.log(value);
   }
   function handleSearch(event) {
     setWord(event.target.value);
@@ -113,10 +91,7 @@ function TextForm() {
           name="content"
           value={status.content}
           placeholder="what's your status?"
-        ></textarea>
-        {/* <input name="picture" value={status.picture} onChange={handleChange} /> */}
-
-        {status.picture !== ""  &&(
+        ></textarea> {status.picture !== ""  &&(
           <img
             className="text-img"
             src={status.picture}
@@ -133,14 +108,12 @@ function TextForm() {
         <button className="text-btn" onClick={APIget}>
           Gif
         </button>
-        {/* {!searchBar && (
-          
-        )} */}
+        
       </div>
       {post.map((item, index) => (
         <div className="post-div" key={index} id={index}>
           <p className="post-para">{item.content}</p>
-          {/* <h5>{item.picture}</h5> */}
+       
           {item.picture !== "" && (
             <img className="post-img" src={item.picture} alt="post-image" />
           )}
@@ -179,9 +152,7 @@ function TextForm() {
             <img
               className="gif-img"
               key={index}
-              // onClick={() => {
-              //   handleDelete(index);
-              // }}
+              
               onClick={() => {
                 selectGif(item.images.fixed_height.url);
               }}
