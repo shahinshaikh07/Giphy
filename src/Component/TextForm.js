@@ -120,7 +120,7 @@ function TextForm() {
           <img
             className="text-img"
             src={status.picture}
-            alt="spongeBob"
+            alt="text-image"
             name="picture"
             value={status.picture}
           />
@@ -142,7 +142,7 @@ function TextForm() {
           <p className="post-para">{item.content}</p>
           {/* <h5>{item.picture}</h5> */}
           {item.picture !== "" && (
-            <img className="post-img" src={item.picture} alt="fu" />
+            <img className="post-img" src={item.picture} alt="post-image" />
           )}
           <button
             className="post-btn"
@@ -186,7 +186,7 @@ function TextForm() {
                 selectGif(item.images.fixed_height.url);
               }}
               src={item.images.fixed_height.url}
-              alt="tina"
+              alt="Gif Images"
             />
           ))}
         </div>
