@@ -57,7 +57,7 @@ function TextForm() {
   }
 
   function handleDelete(id) {
-    console.log(id);
+    // console.log(id);
     setPost((prevPost) => {
       return prevPost.filter((post, index) => {
         return index !== id;
@@ -95,7 +95,7 @@ function TextForm() {
           <img
             className="text-img"
             src={status.picture}
-            alt="text-image"
+            alt="alpha"
             name="picture"
             value={status.picture}
           />
@@ -115,7 +115,7 @@ function TextForm() {
           <p className="post-para">{item.content}</p>
        
           {item.picture !== "" && (
-            <img className="post-img" src={item.picture} alt="post-image" />
+            <img className="post-img" src={item.picture} alt="beta" />
           )}
           <button
             className="post-btn"
@@ -157,7 +157,7 @@ function TextForm() {
                 selectGif(item.images.fixed_height.url);
               }}
               src={item.images.fixed_height.url}
-              alt="Gif Images"
+              alt="gamma"
             />
           ))}
         </div>

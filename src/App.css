@@ -91,7 +91,9 @@ body {
 .text-img {
   border: 5px solid #34b3f1;
   float: center;
-  width: 280px;
+  max-width: 300px;
+  width: 75%;
+height: auto;
   padding: 10px;
 }
 .post-div {
@@ -113,8 +115,12 @@ body {
   word-wrap: break-word;
   font-size: 1.1em;
 }
-/* .post-img {
-} */
+.post-img {
+width: 75%;
+height: auto;
+  max-width: 250px;
+
+}
 .post-btn {
   position: relative;
   background-color: white;
